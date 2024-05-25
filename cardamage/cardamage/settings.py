@@ -53,13 +53,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-MIDDLEWARE = [
-    # ...
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-    # ...
-] 
-
 ROOT_URLCONF = "cardamage.urls"
 
 TEMPLATES = [
@@ -129,14 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')Run the command: py manage.py collectstatic to collect static files
-    
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' 
+STATICFILES_DIRS=[STATIC_DIR,]
 
 
 
