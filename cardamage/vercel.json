@@ -1,9 +1,25 @@
 {
     "version": 2,
+    "builds": [
+        {
+            "src": "cardamage/wsgi.py",
+            "use": "@vercel/python",
+            "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+        },
+        {
+            "src": "manage.py",
+            "use": "@vercel/python",
+            "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+        },
+        {
+            "src": "requirements.txt",
+            "use": "@vercel/python"
+        }
+    ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "cardamage/wsgi.py"
+            "dest": "/cardamage/wsgi.py"
         }
     ]
 }
