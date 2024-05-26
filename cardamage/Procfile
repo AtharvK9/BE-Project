@@ -1,0 +1,1 @@
+web gunicorn cardamage.wsgi:application --log-file -
